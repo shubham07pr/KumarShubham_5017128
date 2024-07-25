@@ -11,7 +11,7 @@ public class Product {
         this.category = category;
     }
 
-    // Getters
+    
     public String getProductId() {
         return productId;
     }
