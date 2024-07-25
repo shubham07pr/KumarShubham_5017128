@@ -4,7 +4,7 @@ import java.util.*;
 
 public class SearchUtil {
 
-    // Linear Search
+    
     public static Product linearSearch(Product[] products, String targetId) {
         for (Product product : products) {
             if (product.getProductId().equals(targetId)) {
@@ -14,7 +14,7 @@ public class SearchUtil {
         return null;
     }
 
-    // Binary Search
+    
     public static Product binarySearch(Product[] products, String targetId) {
         int left = 0;
         int right = products.length - 1;
