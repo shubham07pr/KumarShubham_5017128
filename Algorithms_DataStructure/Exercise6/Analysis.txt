@@ -1,1 +1,20 @@
+Analysis:
 
+Time Complexity of Each Operation-->
+
+Linear Search-->
+Best Case: O(1) (if the book is the first element)
+Worst Case: O(n) (if the book is the last element or not found)
+
+
+Binary Search-->
+Best Case: O(1) (if the middle element is the target)
+Worst Case: O(log n) (since the list is halved with each iteration)
+Note: Requires O(n log n) time for sorting the array before performing the binary search if not already sorted.
+
+
+When to Use Each Algorithm-->
+
+Linear Search: Use when the list is unsorted or the list size is small. It is simple and requires no preprocessing of the list.
+
+Binary Search: Use when the list is sorted or can be sorted efficiently, and when the list size is large. It is much faster for large datasets due to its logarithmic time complexity.
