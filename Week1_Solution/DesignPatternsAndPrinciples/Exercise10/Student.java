@@ -3,7 +3,6 @@ public class Student {
     private String id;
     private String grade;
 
-    // Getters and Setters
     public String getName() {
         return name;
     }
