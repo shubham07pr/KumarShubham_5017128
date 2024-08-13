@@ -19,7 +19,6 @@ public class CustomEmployeeRepository {
         query.setParameter("name", name);
         return query.getResultList();
     }
-
     public List<Employee> findEmployeesByDepartmentName(String departmentName) {
         TypedQuery<Employee> query = entityManager.createNamedQuery("Employee.findByDepartmentName", Employee.class);
         query.setParameter("departmentName", departmentName);
