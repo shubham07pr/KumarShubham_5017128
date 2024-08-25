@@ -22,6 +22,10 @@ public class WebSecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomUserDetailService customUserDetailService;
     private final UnauthorizedHandler unauthorizedHandler;
+    
+	private static final String[] AUTH_WHITELIST = { "/v2/api-docs", "/swagger-resources", "/swagger-resources/**",
+			"/configuration/ui", "/configuration/security", "/swagger-ui.html", "/webjars/**", "/v3/api-docs/**",
+			"/swagger-ui/**", "/api-docs/swagger-config", "/api-docs" };
 
     @Bean
     public SecurityFilterChain applicationSecurity(HttpSecurity http) throws Exception {
@@ -37,6 +41,8 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(registry -> registry
                     .requestMatchers("/").permitAll()
                     .requestMatchers("/auth/token").permitAll()
+                    .requestMatchers(AUTH_WHITELIST).permitAll()
+                    .requestMatchers("/h2-console/**").permitAll()
                     .requestMatchers("/books").hasRole("ADMIN")
                     .requestMatchers("/customers").hasRole("ADMIN")
                     .anyRequest().authenticated()
