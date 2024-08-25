@@ -42,7 +42,7 @@ public class BookServiceImpl implements BookService {
 			book.setPrice(bookDTO.getPrice());
 			book.setIsbn(bookDTO.getIsbn());
 			Book savedBook = bookRepository.save(book);
-			bookCreationCounter.increment(); // Increment custom metric
+			bookCreationCounter.increment(); 
 			return convertToDTO(savedBook);
 		} else {
 			Book book = existingBook.get();
@@ -51,7 +51,7 @@ public class BookServiceImpl implements BookService {
 			book.setPrice(bookDTO.getPrice());
 			book.setIsbn(bookDTO.getIsbn());
 			Book savedBook = bookRepository.save(book);
-			bookCreationCounter.increment(); // Increment custom metric
+			bookCreationCounter.increment(); 
 			return convertToDTO(savedBook);
 		}
 	}
